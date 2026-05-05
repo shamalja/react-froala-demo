@@ -1,21 +1,114 @@
-<<<<<<< HEAD
-# react-froala-demo
-A simple React (Vite) demo showcasing Froala WYSIWYG editor integration with a reusable editor component and live content preview.
-=======
-# React + Vite
+# React Froala Editor Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React (Vite) project showcasing how to integrate the **Froala WYSIWYG editor** using a reusable component and manage rich text content with live preview.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Built with React + Vite
+- Rich text editing using Froala Editor
+- Controlled component pattern (React state sync)
+- Reusable `Editor` component
+- Live HTML preview rendering
+- Minimal and clean setup for learning and integration
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> bdae0d1 (Initial commit - React Froala editor demo)
+> <img width="856" height="470" alt="image" src="https://github.com/user-attachments/assets/7c7a89ea-bb6c-473a-99b0-05085e26e43c" />
+
+## 📂 Project Structure
+
+```
+froala-demo/
+├── src/
+│ ├── components/
+│ │ └── Editor.jsx
+│ ├── App.jsx
+│ └── main.jsx
+├── public/
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## How It Works
+
+- The **Froala editor** is wrapped inside a reusable `Editor` component.
+- Editor content is managed using React state (`useState`).
+- Changes are captured using `onModelChange`.
+- The content is rendered as HTML using `dangerouslySetInnerHTML`.
+
+---
+
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/shamalja/react-froala-demo.git
+cd react-froala-demo
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the development server:
+
+```
+npm run dev
+```
+
+Open in browser:
+
+```
+http://localhost:5173
+```
+
+## Example Usage
+
+```
+<Editor value={content} onChange={setContent} />
+```
+
+## Notes
+
+- This project uses the Froala React wrapper (react-froala-wysiwyg)
+- In some environments (like Vite), you may need to handle default exports carefully
+- For production apps, always sanitize HTML output (e.g., using DOMPurify)
+
+## Security Tip
+
+When rendering user-generated HTML:
+
+```
+import DOMPurify from "dompurify";
+
+const cleanHTML = DOMPurify.sanitize(content);
+```
+
+## Tech Stack
+
+- React
+- Vite
+- Froala Editor
+
+## Use Cases
+
+- CMS editors
+- Blog platforms
+- Admin dashboards
+- Knowledge base systems
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+If you found this helpful, consider giving this repo a star ⭐
